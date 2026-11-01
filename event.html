@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="تفاصيل الفعاليات الطلابية" />
+    <title>تفاصيل الفعالية - دليل فعاليات الجامعة الافتراضية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- الهيدر الموحد -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top py-2 bg-primary shadow-sm">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+            <img src="assets/img/logo.svg" alt="شعار الجامعة الافتراضية السورية" class="navbar-brand-logo bg-white rounded-circle p-1" width="40" height="40" />
+            <div>
+              <span class="d-block fs-5">دليل فعاليات الجامعة الافتراضية</span>
+              <small class="d-block text-white-50 fw-normal" style="font-size: 0.75rem;">Syrian Virtual University - BWP401</small>
+            </div>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="القائمة"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">الرئيسية</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="events.html">كل الفعاليات</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="event.html">تفاصيل الفعالية</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">عن الدليل</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">اتصل بنا</a>
+              </li>
+            </ul>
+            <!-- زر الوضع الليلي -->
+            <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0">
+              <button id="darkModeToggle" type="button" aria-pressed="false" aria-label="تفعيل الوضع الليلي" class="btn btn-outline-light btn-sm rounded-pill">
+                <img id="themeIcon" src="assets/icons/sun-fill.svg" alt="" class="ui-icon" aria-hidden="true" width="16" height="16" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container my-5">
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.html">الرئيسية</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="events.html">الفعاليات</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">تفاصيل الفعالية</li>
+        </ol>
+      </nav>
+
+      <div id="eventNotFound" class="alert alert-warning d-none">
+        لم يتم العثور على الفعالية المطلوبة.
+        <a href="events.html" class="alert-link">العودة إلى الفعاليات</a>.
+      </div>
+
+      <article id="eventDetails" class="card shadow-sm border-0 rounded-4 overflow-hidden mb-5">
+        <img
+          id="eventImage"
+          src="assets/img/photo-1501386761578-eac5c94b800a.avif"
+          class="card-img-top detail-main-img"
+          alt="صورة الفعالية الرئيسية"
+          style="height: 380px; object-fit: cover;"
+        />
+        <div class="card-body p-4 p-lg-5">
+          <div class="d-flex flex-wrap gap-2 mb-3 align-items-center">
+            <span id="eventCategory" class="badge bg-primary">ندوات علمية</span>
+            <span id="eventDate" class="text-muted">📅 28 تشرين الأول 2026</span>
+            <span id="eventLocation" class="text-muted">📍 دمشق - المقر الرئيسي</span>
+          </div>
+
+          <h1 id="eventTitle" class="h2 fw-bold mb-3">ورشة أساسيات تطوير الويب وتطبيقاته</h1>
+          <p id="eventDescription" class="text-secondary lh-lg">
+            جلسة تدريبية وتفاعلية تهدف لتزويد الطلاب بالمهارات الأساسية في تصميم وتطوير المواقع والواجهات التفاعلية باستخدام أحدث التقنيات المعيارية.
+          </p>
+
+          <!-- خريطة ثابتة بصورة -->
+          <div class="my-4">
+            <h3 class="h5 fw-bold mb-3">موقع الفعالية على الخريطة</h3>
+            <div class="position-relative rounded-4 overflow-hidden shadow-sm border">
+              <img src="assets/img/photo-1529156069898-49953e39b3ac.avif" class="w-100 object-fit-cover" style="height: 220px;" alt="خريطة موقع الفعالية" />
+              <div class="position-absolute bottom-0 start-0 end-0 bg-dark bg-opacity-75 text-white p-2 text-center small">
+                📍 دمشق - المزة - مقر الجامعة الافتراضية السورية
+              </div>
+            </div>
+          </div>
+
+          <!-- معرض صور مصغر -->
+          <h2 class="h5 fw-bold mt-4 mb-3">معرض صور الفعالية</h2>
+          <div class="row g-3 mb-4">
+            <div class="col-md-4">
+              <img
+                src="assets/img/photo-1521737711867-e3b97375f902.avif"
+                class="img-fluid rounded gallery-img shadow-sm"
+                alt="صورة من الفعالية 1"
+                style="height: 160px; width: 100%; object-fit: cover;"
+              />
+            </div>
+            <div class="col-md-4">
+              <img
+                src="assets/img/photo-1529156069898-49953e39b3ac.avif"
+                class="img-fluid rounded gallery-img shadow-sm"
+                alt="صورة من الفعالية 2"
+                style="height: 160px; width: 100%; object-fit: cover;"
+              />
+            </div>
+            <div class="col-md-4">
+              <img
+                src="assets/img/photo-1559024094-4a1e4495c3c1.avif"
+                class="img-fluid rounded gallery-img shadow-sm"
+                alt="صورة من الفعالية 3"
+                style="height: 160px; width: 100%; object-fit: cover;"
+              />
+            </div>
+          </div>
+
+          <!-- أزرار الإجراءات -->
+          <div class="d-flex flex-wrap gap-2 pt-3 border-top align-items-center">
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#bookingModal"
+            >
+              حجز مقعد في الفعالية
+            </button>
+            <button class="btn btn-outline-primary" onclick="alert('تمت إضافة الفعالية إلى التقويم بنجاح!')">
+              📅 أضف للتقويم
+            </button>
+            <button class="btn btn-outline-secondary" onclick="navigator.clipboard.writeText(window.location.href); alert('تم نسخ رابط الفعالية للمشاركة!');">
+              🔗 شارك
+            </button>
+            <a href="events.html" class="btn btn-light ms-auto">العودة لكل الفعاليات</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- قسم فعاليات ذات صلة -->
+      <section class="mt-5">
+        <h2 class="h4 fw-bold mb-3">فعاليات ذات صلة</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+              <img src="assets/img/photo-1516321318423-f06f85e504b3.avif" class="card-img-top" style="height: 160px; object-fit: cover;" alt="فعالية متعلقة 1" />
+              <div class="card-body d-flex flex-column">
+                <span class="badge bg-danger mb-2 align-self-start">فن وموسيقى</span>
+                <h3 class="h6 fw-bold">أمسية المواهب الفنية</h3>
+                <p class="small text-muted flex-grow-1">أمسية لعرض مواهب طلاب الجامعة.</p>
+                <a href="event.html?id=3" class="btn btn-outline-primary btn-sm mt-2">التفاصيل</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+              <img src="assets/img/photo-1529156069898-49953e39b3ac.avif" class="card-img-top" style="height: 160px; object-fit: cover;" alt="فعالية متعلقة 2" />
+              <div class="card-body d-flex flex-column">
+                <span class="badge bg-warning text-dark mb-2 align-self-start">مجتمع وطلاب</span>
+                <h3 class="h6 fw-bold">ملتقى الطلاب والأفكار</h3>
+                <p class="small text-muted flex-grow-1">مساحة مفتوحة للتعارف وتبادل الخبرات.</p>
+                <a href="event.html?id=2" class="btn btn-outline-primary btn-sm mt-2">التفاصيل</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+              <img src="assets/img/photo-1517649763962-0c623066013b.avif" class="card-img-top" style="height: 160px; object-fit: cover;" alt="فعالية متعلقة 3" />
+              <div class="card-body d-flex flex-column">
+                <span class="badge bg-success mb-2 align-self-start">رياضة ونشاط</span>
+                <h3 class="h6 fw-bold">يوم الرياضة الجامعي</h3>
+                <p class="small text-muted flex-grow-1">منافسات وأنشطة طلابية متنوعة.</p>
+                <a href="event.html?id=5" class="btn btn-outline-primary btn-sm mt-2">التفاصيل</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal حجز مقعد -->
+    <div
+      class="modal fade"
+      id="bookingModal"
+      tabindex="-1"
+      aria-labelledby="bookingModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 shadow border-0">
+          <form id="bookingForm">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5" id="bookingModalLabel">
+                حجز مقعد تجريبي
+              </h2>
+              <button
+                type="button"
+                class="btn-close ms-0"
+                data-bs-dismiss="modal"
+                aria-label="إغلاق"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p class="text-muted small">
+                هذا نموذج تجريبي لحجز مقعدك في الفعالية عبر موقع الجامعة الافتراضية.
+              </p>
+              <div class="mb-3">
+                <label for="bookingName" class="form-label">الاسم الكامل</label>
+                <input id="bookingName" class="form-control" required placeholder="أدخل اسمك..." />
+              </div>
+              <div class="mb-3">
+                <label for="bookingEmail" class="form-label">البريد الإلكتروني</label>
+                <input
+                  id="bookingEmail"
+                  type="email"
+                  class="form-control"
+                  required
+                  placeholder="student@svuonline.org"
+                />
+              </div>
+              <div id="bookingResult" aria-live="polite"></div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+              >
+                إلغاء
+              </button>
+              <button type="submit" class="btn btn-primary">
+                تأكيد الحجز التجريبي
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- الفوتر الموحد -->
+    <footer class="site-footer bg-dark text-white pt-4 pb-3 mt-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-5">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <img src="assets/img/logo.svg" alt="SVU Logo" width="40" height="40" />
+              <h5 class="text-white fw-bold mb-0">دليل فعاليات الجامعة الافتراضية السورية</h5>
+            </div>
+            <p class="small mb-2 text-white-50">
+              المنصة الرسمية لاستعراض ومتابعة الفعاليات في الجامعة الافتراضية السورية (SVU).
+            </p>
+            <p class="small text-accent mb-0">مشروع مقرر برمجة الويب <strong>BWP401</strong> | إشراف: <strong>د. باسل الخطيب</strong></p>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-white fw-bold mb-3">روابط سريعة</h6>
+            <ul class="list-unstyled small d-flex flex-column gap-2">
+              <li><a href="index.html" class="text-secondary text-decoration-none">الرئيسية</a></li>
+              <li><a href="events.html" class="text-secondary text-decoration-none">كل الفعاليات</a></li>
+              <li><a href="about.html" class="text-secondary text-decoration-none">عن الدليل</a></li>
+              <li><a href="contact.html" class="text-secondary text-decoration-none">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h6 class="text-white fw-bold mb-3">معلومات التواصل</h6>
+            <p class="small mb-1 text-white-50">البريد الرسمي: t_balkhatib@svuonline.org</p>
+            <p class="small mb-3 text-white-50">دمشق - المزة - مبنى وزارة التعليم العالي</p>
+            <div class="d-flex gap-2 social-links">
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill"><img src="assets/icons/facebook.svg" alt="FB" class="ui-icon" width="16" height="16" /></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill"><img src="assets/icons/linkedin.svg" alt="IN" class="ui-icon" width="16" height="16" /></a>
+              <a href="https://telegram.org" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill"><img src="assets/icons/telegram.svg" alt="TG" class="ui-icon" width="16" height="16" /></a>
+            </div>
+          </div>
+        </div>
+        <hr class="border-secondary my-4" />
+        <div class="text-center small text-white-50">
+          جميع الحقوق محفوظة &copy; 2026 - الجامعة الافتراضية السورية (SVU) | BWP401
+        </div>
+      </div>
+    </footer>
+
+    <!-- زر الصعود للأعلى -->
+    <button id="scrollTopBtn" type="button" title="الصعود إلى أعلى الصفحة" aria-label="الصعود إلى أعلى الصفحة">
+      <img src="assets/icons/arrow-up.svg" alt="" class="ui-icon" aria-hidden="true" width="16" height="16" />
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/event.js"></script>
+  </body>
+</html>

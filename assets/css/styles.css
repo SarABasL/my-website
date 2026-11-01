@@ -1,0 +1,132 @@
+:root{--ink:#22213d;--muted:#70718a;--purple:#5146e5;--deep:#302a9c;--orange:#ff795b;--line:#e8e9f2;--soft:#f7f8fc}
+*{box-sizing:border-box}
+body{font-family:Cairo,sans-serif;color:var(--ink);line-height:1.8;margin:0}
+a{text-decoration:none}
+.top{background:linear-gradient(110deg,var(--deep),var(--purple))}
+.navbar{padding:14px 0}
+.navbar-brand{color:white;font-weight:800;display:flex;align-items:center;gap:10px}
+.navbar-brand small{display:block;font-size:11px;color:#dcd9ff}
+.logo{display:grid;place-items:center;width:43px;height:43px;border-radius:14px;background:var(--orange);font-size:24px}
+.nav-link{color:#e8e6ff!important}
+.nav-link:hover{color:white!important}
+.btn{border-radius:12px;font-weight:700;padding:.7rem 1.1rem}
+.btn-warm{background:var(--orange);color:#fff;border-color:var(--orange)}
+.btn-warm:hover{background:#ed6548;color:white}
+.section{padding:72px 0}
+.heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
+.heading h2{font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);margin:5px 0}
+.heading p{color:var(--muted);margin:0}
+.heading>a{font-weight:800;color:var(--purple);white-space:nowrap}
+.cardx{height:100%;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;transition:.2s}
+.cardx:hover{transform:translateY(-4px);box-shadow:0 16px 40px #24244b12}
+.cardx>img{width:100%;height:205px;object-fit:cover}
+.pad{padding:21px}
+.pad h3{font-weight:800;font-size:1.12rem;margin:12px 0 8px}
+.pad p{color:var(--muted);font-size:.9rem}
+.tag-culture{background:#fff0e9;color:#b34b31}
+.tag-sport{background:#e7f7ef;color:#18774a}
+.tag-music{background:#f0edff;color:#5744bd}
+.tag-social{background:#fff7df;color:#88620c}
+.meta{color:var(--muted);font-size:.8rem}
+.pagehero{background:linear-gradient(115deg,var(--deep),var(--purple));padding:55px 0;color:white}
+.pagehero h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;margin:12px 0}
+.pagehero p{color:#e2dfff}
+.crumb{margin-top:15px;color:#d5d2ff;font-size:.85rem}
+.crumb a{color:white}
+.filters{margin-bottom:24px}
+.filters .heading{margin-bottom:18px}
+.resultbar{display:flex;justify-content:space-between;gap:10px;margin:20px 0;color:var(--muted);font-size:.85rem}
+.empty{text-align:center;padding:50px}
+footer{background:#211d59;color:#d9d6fa;text-align:center;padding:38px 0 24px}
+footer h3{font-size:1.2rem;color:white;font-weight:800}
+footer p{margin:4px}
+footer a{color:#e4e1ff}
+footer small{display:block;color:#aaa6db;margin-top:18px}
+#topBtn{position:fixed;bottom:20px;left:20px;width:44px;height:44px;border:0;border-radius:14px;background:var(--orange);color:white;font-size:1.3rem;display:none;z-index:20}
+#topBtn.show{display:block}
+@media (max-width:575px) 
+{
+.section{padding:52px 0}
+.heading{align-items:flex-start}
+.cardx>img{height:185px}
+.pagehero{padding:42px 0}
+.filters{padding:17px}
+.resultbar{flex-direction:column}
+}
+
+.team-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--deep), var(--purple));
+    color: #fff;
+}
+
+/*  ‰”Ìﬁ ‘—Ìÿ «· ‰ﬁ· Ê«·—Ê«»ÿ «·⁄·ÊÌ… */
+.navbar, .site-navbar {
+    background-color: var(--deep) !important;
+}
+
+    .navbar .nav-link {
+        color: #ffffff !important;
+    }
+
+        .navbar .nav-link:hover, .navbar .nav-link.active {
+            color: var(--orange) !important;
+        }
+
+
+
+/*
+    ‰”Ìﬁ «·‘⁄«— Ê√ÌﬁÊ‰… «·Ê÷⁄ «··Ì·Ì ›Ì «· —ÊÌ”… */
+.brand-logo-img {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+#darkModeToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+    #darkModeToggle:hover {
+        background-color: var(--secondary-color, #0284c7);
+        border-color: var(--secondary-color, #0284c7);
+    }
+/* ==========================================================================
+   ≈⁄œ«œ«  «·Ê÷⁄ «··Ì·Ì (Dark Mode)
+   ========================================================================== */
+body.dark-mode {
+    background-color: #12102e !important;
+    color: #e4e1ff !important;
+}
+
+    body.dark-mode .card,
+    body.dark-mode .cardx,
+    body.dark-mode .filters,
+    body.dark-mode .modal-content {
+        background-color: #1c1842 !important;
+        color: #e4e1ff !important;
+        border-color: #38327d !important;
+    }
+
+    body.dark-mode .heading p,
+    body.dark-mode .pad p,
+    body.dark-mode .meta,
+    body.dark-mode .text-muted {
+        color: #aba5db !important;
+    }
+
+    body.dark-mode .form-control,
+    body.dark-mode .form-select {
+        background-color: #252054 !important;
+        color: #fff !important;
+        border-color: #38327d !important;
+    }

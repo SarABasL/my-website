@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="دليل فعاليات الجامعة الافتراضية" />
+    <title>كل الفعاليات | دليل فعاليات الجامعة الافتراضية BWP401</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- الهيدر الموحد مع الشعار وزر الوضع الليلي -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top py-2 bg-primary shadow-sm">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+            <img src="assets/img/logo.svg" alt="شعار الجامعة الافتراضية السورية" class="navbar-brand-logo bg-white rounded-circle p-1" width="40" height="40" />
+            <div>
+              <span class="d-block fs-5">دليل فعاليات الجامعة الافتراضية</span>
+              <small class="d-block text-white-50 fw-normal" style="font-size: 0.75rem;">Syrian Virtual University - BWP401</small>
+            </div>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="تبديل القائمة"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">الرئيسية</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="events.html">كل الفعاليات</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">عن الدليل</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">اتصل بنا</a>
+              </li>
+            </ul>
+            <!-- زر الوضع الليلي -->
+            <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0">
+              <button id="darkModeToggle" type="button" aria-pressed="false" aria-label="تفعيل الوضع الليلي" class="btn btn-outline-light btn-sm rounded-pill">
+                <img id="themeIcon" src="assets/icons/sun-fill.svg" alt="" class="ui-icon" aria-hidden="true" width="16" height="16" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="pagehero">
+        <div class="container">
+          <label>تقويم مجتمعنا</label>
+          <h1>كل الفعاليات، في مكان واحد.</h1>
+          <p>ابحث عن تجربة تناسب وقتك واهتماماتك.</p>
+          <div class="crumb">
+            <a href="index.html">الرئيسية</a>
+            / كل الفعاليات
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="filters">
+            <div class="heading">
+              <div>
+                <label>اكتشف شيئاً جديداً</label>
+                <h2>ابحث عن فعاليتك</h2>
+              </div>
+              <button class="btn btn-light" id="reset">مسح الفلاتر ↺</button>
+            </div>
+            <div class="row g-3">
+              <div class="col-lg-4">
+                <label class="form-label" for="q">بحث بالكلمات</label>
+                <input
+                  id="q"
+                  class="form-control"
+                  placeholder="اسم الفعالية أو وصفها..."
+                />
+              </div>
+              <div class="col-md-4 col-lg-2">
+                <label class="form-label" for="cat">التصنيف</label>
+                <select id="cat" class="form-select">
+                  <option value="">الكل</option>
+                  <option value="culture">ثقافة ومعرفة</option>
+                  <option value="sport">رياضة ونشاط</option>
+                  <option value="music">فن وموسيقى</option>
+                  <option value="social">مجتمع وطلاب</option>
+                </select>
+              </div>
+              <div class="col-md-4 col-lg-2">
+                <label class="form-label" for="date">التاريخ</label>
+                <select id="date" class="form-select">
+                  <option value="">كل التواريخ</option>
+                  <option value="2026-10">تشرين الأول</option>
+                  <option value="2026-11">تشرين الثاني</option>
+                </select>
+              </div>
+              <div class="col-md-4 col-lg-2">
+                <label class="form-label" for="loc">الموقع</label>
+                <select id="loc" class="form-select">
+                  <option value="">كل المواقع</option>
+                  <option>دمشق</option>
+                  <option>حمص</option>
+                  <option>حلب</option>
+                  <option>اللاذقية</option>
+                  <option>طرطوس</option>
+                </select>
+              </div>
+              <div class="col-lg-2 d-flex align-items-end">
+                <button id="search" class="btn btn-warm w-100">بحث</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="resultbar">
+            <b id="count" aria-live="polite">عدد الفعاليات: 6</b>
+            <span>البيانات تجريبية لأغراض المشروع</span>
+          </div>
+
+          <div class="row g-4" id="eventsGrid">
+            <div
+              class="col-md-6 col-lg-4 event-item"
+              data-title="ورشة الإبداع الرقمي"
+              data-category="culture"
+              data-date="2026-10-28"
+              data-location="دمشق"
+              data-search="ورشة الإبداع الرقمي خطوات عملية لبناء مهاراتك في العالم الرقمي. ثقافة ومعرفة"
+            >
+              <article class="cardx">
+                <img
+                  src="assets/img/photo-1516321318423-f06f85e504b3.avif"
+                  alt="ورشة الإبداع الرقمي"
+                />
+                <div class="pad">
+                  <span class="badge tag-culture">ثقافة ومعرفة</span>
+                  <h3>ورشة الإبداع الرقمي</h3>
+                  <p>خطوات عملية لبناء مهاراتك في العالم الرقمي.</p>
+                  <div class="meta">📅 28 تشرين الأول · 📍 دمشق</div>
+                  <a
+                    class="btn btn-outline-primary w-100 mt-3"
+                    href="event.html?id=1"
+                    >تفاصيل الفعالية</a
+                  >
+                </div>
+              </article>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-4 event-item"
+              data-title="ملتقى الطلاب والأفكار"
+              data-category="social"
+              data-date="2026-10-30"
+              data-location="دمشق"
+              data-search="ملتقى الطلاب والأفكار مساحة مفتوحة للتعارف وتبادل الأفكار والمبادرات. مجتمع وطلاب"
+            >
+              <article class="cardx">
+                <img
+                  src="assets/img/photo-1529156069898-49953e39b3ac.avif"
+                  alt="ملتقى الطلاب والأفكار"
+                />
+                <div class="pad">
+                  <span class="badge tag-social">مجتمع وطلاب</span>
+                  <h3>ملتقى الطلاب والأفكار</h3>
+                  <p>مساحة مفتوحة للتعارف وتبادل الأفكار والمبادرات.</p>
+                  <div class="meta">📅 30 تشرين الأول · 📍 دمشق</div>
+                  <a
+                    class="btn btn-outline-primary w-100 mt-3"
+                    href="event.html?id=2"
+                    >تفاصيل الفعالية</a
+                  >
+                </div>
+              </article>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-4 event-item"
+              data-title="أمسية المواهب الفنية"
+              data-category="music"
+              data-date="2026-11-02"
+              data-location="حمص"
+              data-search="أمسية المواهب الفنية أمسية فنية تحتفي بالمواهب والإبداع. فن وموسيقى"
+            >
+              <article class="cardx">
+                <img
+                  src="assets/img/photo-1501386761578-eac5c94b800a.avif"
+                  alt="أمسية المواهب الفنية"
+                />
+                <div class="pad">
+                  <span class="badge tag-music">فن وموسيقى</span>
+                  <h3>أمسية المواهب الفنية</h3>
+                  <p>أمسية فنية تحتفي بالمواهب والإبداع.</p>
+                  <div class="meta">📅 02 تشرين الثاني · 📍 حمص</div>
+                  <a
+                    class="btn btn-outline-primary w-100 mt-3"
+                    href="event.html?id=3"
+                    >تفاصيل الفعالية</a
+                  >
+                </div>
+              </article>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-4 event-item"
+              data-title="حوار الأفكار المبتكرة"
+              data-category="culture"
+              data-date="2026-11-05"
+              data-location="اللاذقية"
+              data-search="حوار الأفكار المبتكرة حوار مفتوح حول الأفكار التي تصنع الفرق. ثقافة ومعرفة"
+            >
+              <article class="cardx">
+                <img
+                  src="assets/img/photo-1521737711867-e3b97375f902.avif"
+                  alt="حوار الأفكار المبتكرة"
+                />
+                <div class="pad">
+                  <span class="badge tag-culture">ثقافة ومعرفة</span>
+                  <h3>حوار الأفكار المبتكرة</h3>
+                  <p>حوار مفتوح حول الأفكار التي تصنع الفرق.</p>
+                  <div class="meta">📅 05 تشرين الثاني · 📍 اللاذقية</div>
+                  <a
+                    class="btn btn-outline-primary w-100 mt-3"
+                    href="event.html?id=4"
+                    >تفاصيل الفعالية</a
+                  >
+                </div>
+              </article>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-4 event-item"
+              data-title="يوم الرياضة الجامعي"
+              data-category="sport"
+              data-date="2026-11-07"
+              data-location="حلب"
+              data-search="يوم الرياضة الجامعي أنشطة جماعية تشجع على الحركة وروح الفريق. رياضة ونشاط"
+            >
+              <article class="cardx">
+                <img
+                  src="assets/img/photo-1517649763962-0c623066013b.avif"
+                  alt="يوم الرياضة الجامعي"
+                />
+                <div class="pad">
+                  <span class="badge tag-sport">رياضة ونشاط</span>
+                  <h3>يوم الرياضة الجامعي</h3>
+                  <p>أنشطة جماعية تشجع على الحركة وروح الفريق.</p>
+                  <div class="meta">📅 07 تشرين الثاني · 📍 حلب</div>
+                  <a
+                    class="btn btn-outline-primary w-100 mt-3"
+                    href="event.html?id=5"
+                    >تفاصيل الفعالية</a
+                  >
+                </div>
+              </article>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-4 event-item"
+              data-title="مبادرة معاً للمجتمع"
+              data-category="social"
+              data-date="2026-11-09"
+              data-location="طرطوس"
+              data-search="مبادرة معاً للمجتمع مبادرة طلابية لخدمة المجتمع المحلي. مجتمع وطلاب"
+            >
+              <article class="cardx">
+                <img
+                  src="assets/img/photo-1559024094-4a1e4495c3c1.avif"
+                  alt="مبادرة معاً للمجتمع"
+                />
+                <div class="pad">
+                  <span class="badge tag-social">مجتمع وطلاب</span>
+                  <h3>مبادرة معاً للمجتمع</h3>
+                  <p>مبادرة طلابية لخدمة المجتمع المحلي.</p>
+                  <div class="meta">📅 09 تشرين الثاني · 📍 طرطوس</div>
+                  <a
+                    class="btn btn-outline-primary w-100 mt-3"
+                    href="event.html?id=6"
+                    >تفاصيل الفعالية</a
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div id="empty" class="empty d-none">
+            <h3>لم نعثر على فعاليات مطابقة</h3>
+            <p>جرّب تغيير كلمات البحث أو خيارات الفلترة.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- الفوتر الموحد والمطابق للمشروع -->
+    <footer class="site-footer bg-dark text-white pt-4 pb-3 mt-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-5">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <img src="assets/img/logo.svg" alt="SVU Logo" width="40" height="40" />
+              <h5 class="text-white fw-bold mb-0">دليل فعاليات الجامعة الافتراضية السورية</h5>
+            </div>
+            <p class="small mb-2 text-white-50">
+              المنصة الرسمية لاستعراض ومتابعة كافة المؤتمرات العلمية، الأنشطة الثقافية، البطولات الرياضية، واللقاءات الطلابية في الجامعة الافتراضية السورية (SVU).
+            </p>
+            <p class="small text-accent mb-0">مشروع مقرر برمجة الويب <strong>BWP401</strong> | إشراف: <strong>د. باسل الخطيب</strong></p>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-white fw-bold mb-3">روابط سريعة</h6>
+            <ul class="list-unstyled small d-flex flex-column gap-2">
+              <li><a href="index.html" class="text-secondary text-decoration-none">الصفحة الرئيسية</a></li>
+              <li><a href="events.html" class="text-secondary text-decoration-none">كل الفعاليات</a></li>
+              <li><a href="about.html" class="text-secondary text-decoration-none">عن الدليل وفريق العمل</a></li>
+              <li><a href="contact.html" class="text-secondary text-decoration-none">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h6 class="text-white fw-bold mb-3">معلومات التواصل والسوشيال</h6>
+            <p class="small mb-1 text-white-50">البريد الرسمي: <a href="mailto:t_balkhatib@svuonline.org" class="text-decoration-none">t_balkhatib@svuonline.org</a></p>
+            <p class="small mb-1 text-white-50">موقع الجامعة: <a href="https://www.svuonline.org" target="_blank" rel="noopener" class="text-decoration-none">www.svuonline.org</a></p>
+            <p class="small mb-3 text-white-50">العنوان: دمشق - المزة - مبنى وزارة التعليم العالي</p>
+            <div class="d-flex gap-2 social-links">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Facebook" title="Facebook"><img src="assets/icons/facebook.svg" alt="" class="ui-icon" aria-hidden="true" width="16" height="16" /></a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill" aria-label="LinkedIn" title="LinkedIn"><img src="assets/icons/linkedin.svg" alt="" class="ui-icon" aria-hidden="true" width="16" height="16" /></a>
+              <a href="https://telegram.org" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Telegram" title="Telegram"><img src="assets/icons/telegram.svg" alt="" class="ui-icon" aria-hidden="true" width="16" height="16" /></a>
+            </div>
+          </div>
+        </div>
+        <hr class="border-secondary my-4" />
+        <div class="text-center small text-white-50">
+          2026 جميع الحقوق محفوظة - الجامعة الافتراضية السورية (SVU) | وظيفة مقرر BWP401
+        </div>
+      </div>
+    </footer>
+
+    <!-- زر الصعود للأعلى -->
+    <button id="scrollTopBtn" type="button" title="الصعود إلى أعلى الصفحة" aria-label="الصعود إلى أعلى الصفحة">
+      <img src="assets/icons/arrow-up.svg" alt="" class="ui-icon" aria-hidden="true" width="16" height="16" />
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
